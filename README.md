@@ -1,5 +1,5 @@
-# whomodel
-The WhoModel class is used to encapsulate several RESTful API calls to a Django web server. This class is used in my do it yourself home automation system. 
+# whoview
+The WhoView class is used to encapsulate several MQTT publish methods and RESTful API calls to a Django web server. This class is used in my do it yourself home automation system. 
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/Django)
