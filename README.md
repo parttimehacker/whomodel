@@ -34,15 +34,13 @@ The WhoView class is used respond to the MQTT topic **diy/system/who**. This cla
 
 
 ## Technologies Used
-- Django Web Server - version 3.2.8
 - python - version 3.7.3
 - paho.mqtt.client - version TBD
-- gpiozero - version TBD
 
 ## Features
 List the ready features here:
-- Provides django server rest_framework interface via python **requests** GET, PUT, POST and DELETE functions
-- Isolates the django process to update the web server from the rest of the application
+- Handles the basic **diy/system/who** functions
+- Reports on status, hostname and IP address by way of a MQTT publish and LOGGING info message.
 - Code passes pylint with a score of 10.0
 
 
