@@ -1,7 +1,5 @@
 # whoview
-The WhoView class is used to encapsulate several MQTT publish methods and RESTful API calls to a Django web server. This class is used in my do it yourself home automation system. 
-# djangoview 
-The DjangoView class is used to encapsulate several RESTful API calls to a Django web server. This class is used in my *do it yourself home automation system* (**DIYHA**). Each python DIYHA application is hosted on a Raspberry Pi server. An **asset** application is used to capture CPU status and the platorm infomation, e.g., Raspbian version and Raspberry server model and version. Examples of other uses of this class:
+The WhoView class is used to encapsulate several MQTT publish methods and RESTful API calls to a Django web server. This class is used in my *do it yourself home automation system* (**DIYHA**). Each python DIYHA application is hosted on a Raspberry Pi server. An **asset** application is used to capture CPU status and the platorm infomation, e.g., Raspbian version and Raspberry server model and version. Examples of other uses of this class:
 - **clock** app identifies movement in a room via a PIR sensor and the reports to the MQTT and django servers.
 - **sensor** app measures and reports on several room environment data, e.g., temperature, humidity, lux.
 - **switch** app uses PIR movement and MQTT topics to turn on a AC power outlet. It also reports on the movement.
@@ -30,7 +28,7 @@ The DjangoView class is used to encapsulate several RESTful API calls to a Djang
 - Provide general information about your project here.
   - This is one of six classes used in my home automation system (**DIYHA**). I've used OOP and MVC concepts in my DIYHA system. 
 - What problem does it (intend to) solve?
-  - I wanted to isolate the django rest_framework code into a single class. The main python application only uses PUT requests to update information.
+  - I wanted to isolate the who server identification status into a single class. The main python application subscribes to a **diy/system/who** topic and responds by turning on or off who messages.
 - What is the purpose of your project?
   - My home automation system contains environment sensors, motion sensors, LED clocks, light switches, emergency sirens, a django web server, interfaces to Adafruit.io and a mosquitto MQTT broker.
 - Why did you undertake it?
