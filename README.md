@@ -1,5 +1,5 @@
 # whoview
-The WhoView class is used to encapsulate several MQTT publish methods and RESTful API calls to a Django web server. This class is used in my *do it yourself home automation system* (**DIYHA**). Each python DIYHA application is hosted on a Raspberry Pi server. An **asset** application is used to capture CPU status and the platorm infomation, e.g., Raspbian version and Raspberry server model and version. Examples of other uses of this class:
+The WhoView class is used respond to the MQTT topic **diy/system/who**. This class is used in my *do it yourself home automation system* (**DIYHA**). Each python DIYHA application is hosted on a Raspberry Pi server. Each **DIYHA** will respond to a **diy/system/who** subscribed topic and report on their status, hostname and IP address. Some applications have a user interface, e.g., 8x8 matrix or seven segment LED, to display their IP address or more.Examples of other uses of this class:
 - **clock** app identifies movement in a room via a PIR sensor and the reports to the MQTT and django servers.
 - **sensor** app measures and reports on several room environment data, e.g., temperature, humidity, lux.
 - **switch** app uses PIR movement and MQTT topics to turn on a AC power outlet. It also reports on the movement.
