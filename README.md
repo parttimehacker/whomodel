@@ -79,22 +79,47 @@ Provide various use cases and code examples here.
 ├── requirements.txt
 ├── systemd_script.sh
 ```
-asset.py
-`from pkg_classes.whoview import WhoView`
+- asset.py examples
+```
+from pkg_classes.whoview import WhoView
+```
+- initialization of the view controller
 ```
 # get the command line arguements
-
 CONFIG = ConfigModel(LOGGING_FILE)
-
 # setup web server updates
-
 DJANGO = DjangoModel(LOGGING_FILE)
 DJANGO.set_django_urls(CONFIG.get_django_api_url())
-```
-```
 # Set up who message handler from MQTT broker and wait for client.
-
 WHO = WhoView(LOGGING_FILE, DJANGO)
+```
+- provide MQTT client
+```
+WHO.set_client(CLIENT)
+```
+- process diy/system/who topic subscription
+```
+client.subscribe("diy/system/who", 1)
+```
+- handling diy/system/who messages
+```
+TOPIC_DISPATCH_DICTIONARY = {
+    "diy/system/test":
+        {"method": system_message},
+    "diy/system/who":
+        {"method": system_message}
+}
+def system_message(client, msg):
+    """ Log and process system messages. """
+    # pylint: disable=unused-argument
+    LOGGER.info(msg.topic + " " + msg.payload.decode('utf-8'))
+    if msg.topic == 'diy/system/test':
+        TEST.on_message(msg.payload)
+    elif msg.topic == 'diy/system/who':
+        if msg.payload == b'ON':
+            WHO.turn_on()
+        else:
+            WHO.turn_off()
 ```
 
 ## Implementation Status
