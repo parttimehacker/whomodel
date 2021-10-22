@@ -78,7 +78,7 @@ Provide various use cases and code examples here.
 ├── requirements.txt
 ├── systemd_script.sh
 ```
-- asset.py examples
+- Example from the **asset.py** DIYHA application
 ```
 from pkg_classes.whoview import WhoView
 ```
