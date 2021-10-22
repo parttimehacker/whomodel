@@ -1,6 +1,6 @@
 # whoview
 The WhoView class is used respond to the MQTT topic **diy/system/who**. This class is one of six general classes in my *do it yourself home automation system* (**DIYHA**). Each python DIYHA application is hosted on a Raspberry Pi server and will respond to a **diy/system/who** subscribed topic and report on their status, hostname and IP address. 
-- Note - Some applications have a true user interface, e.g., 8x8 matrix or seven segment LED, to display their IP address in a project specific MVC view. 
+- Note - Some applications have a user interface, e.g., 8x8 matrix or seven segment LED, to display their IP address in a project specific MVC view. 
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/Django)
@@ -131,12 +131,11 @@ def system_message(client, msg):
 Include areas you believe need improvement / could be improved. Also add TODOs for future development.
 
 Room for improvement:
-- Improvement to be done 1
-- Improvement to be done 2
+- Further refactoring to more generalize the class
 
 To do:
-- Feature to be added 1
-- Feature to be added 2
+- Integrate into other DIYHA applications and repositories
+- Develop a new installation process for seperate repositories
 
 
 ## Acknowledgements
