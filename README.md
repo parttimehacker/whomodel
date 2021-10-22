@@ -45,9 +45,13 @@ List the ready features here:
 
 
 ## Screenshots
-![Example screenshot](./diyhadiagram.png)
+Not applicable.
+<!-- ![Example screenshot](./diyhadiagram.png)-->
 <!-- If you have screenshots you'd like to share, include them here. -->
 
+## Architecture
+![Example screenshot](./diyhadiagram.png)
+<!-- If you have screenshots you'd like to share, include them here. -->
 
 ## Setup
 What are the project requirements/dependencies? Where are they listed? A requirements.txt or a Pipfile.lock file perhaps? Where is it located?
