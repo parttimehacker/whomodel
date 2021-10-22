@@ -13,6 +13,7 @@ The WhoView class is used respond to the MQTT topic **diy/system/who**. This cla
 * [Technologies Used](#technologies-used)
 * [Features](#features)
 * [Screenshots](#screenshots)
+* [Architecture](#architecture)
 * [Setup](#setup)
 * [Usage](#usage)
 * [Project Status](#project-status)
@@ -33,7 +34,6 @@ The WhoView class is used respond to the MQTT topic **diy/system/who**. This cla
   - This was a fun project to learn about python, Raspberry Pi, Arduino processors, hardware and more.
 <!-- You don't have to answer all the questions - just the ones relevant to your project. -->
 
-
 ## Technologies Used
 - python - version 3.7.3
 - paho.mqtt.client - version TBD
@@ -43,7 +43,6 @@ List the ready features here:
 - Handles the basic **diy/system/who** functions
 - Reports on status, hostname and IP address by way of a MQTT publish and LOGGING info message.
 - Code passes pylint with a score of 10.0
-
 
 ## Screenshots
 Not applicable.
@@ -58,7 +57,6 @@ Not applicable.
 What are the project requirements/dependencies? Where are they listed? A requirements.txt or a Pipfile.lock file perhaps? Where is it located?
 
 Proceed to describe how to install / setup one's local environment / get started with the project.
-
 
 ## Usage
 How does one go about using it?
