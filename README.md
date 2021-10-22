@@ -79,8 +79,23 @@ Provide various use cases and code examples here.
 ├── requirements.txt
 ├── systemd_script.sh
 ```
-`write-your-code-here`
+asset.py
+`from pkg_classes.whoview import WhoView`
+```
+# get the command line arguements
 
+CONFIG = ConfigModel(LOGGING_FILE)
+
+# setup web server updates
+
+DJANGO = DjangoModel(LOGGING_FILE)
+DJANGO.set_django_urls(CONFIG.get_django_api_url())
+```
+```
+# Set up who message handler from MQTT broker and wait for client.
+
+WHO = WhoView(LOGGING_FILE, DJANGO)
+```
 
 ## Implementation Status
 ![Status](https://progress-bar.dev/80/?title=progress)
