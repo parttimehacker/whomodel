@@ -1,5 +1,5 @@
 # whoview
-The WhoView class is used respond to the MQTT topic **diy/system/who**. This class is one of six general classes in my *do it yourself home automation system* (**DIYHA**). Each python DIYHA application is hosted on a Raspberry Pi server and will respond to a **diy/system/who** subscribed topic and report on their status, hostname and IP address. 
+The WhoView class is used respond to the MQTT topic **diy/system/who**. This class is one of five general classes in my *do it yourself home automation system* (**DIYHA**). Each python DIYHA application is hosted on a Raspberry Pi server and will respond to a **diy/system/who** subscribed topic and report on their status, hostname and IP address. 
 - Note - Some DIYHA applications have an additional diy/system/who user interface, e.g., 8x8 matrix or seven segment LED, to display their IP address in a project specific MVC view. 
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -25,7 +25,7 @@ The WhoView class is used respond to the MQTT topic **diy/system/who**. This cla
 
 ## General Information
 - Provide general information about your project here.
-  - This is one of six classes used in my home automation system (**DIYHA**). I've used OOP and MVC concepts in my DIYHA system. 
+  - This is one of five classes used in my home automation system (**DIYHA**). I've used OOP and MVC concepts in my DIYHA system. 
 - What problem does it (intend to) solve?
   - I wanted to isolate the who server identification status into a single class. The main python application subscribes to a **diy/system/who** topic and responds by turning on or off who messages.
 - What is the purpose of your project?
@@ -55,8 +55,20 @@ Not applicable.
 
 ## Setup
 What are the project requirements/dependencies? Where are they listed? A requirements.txt or a Pipfile.lock file perhaps? Where is it located?
+- git clone the repository and then copy the python file to the **pkg_classes** directory of an relevant DIYHA applicattions on the server.
 
 Proceed to describe how to install / setup one's local environment / get started with the project.
+```
+git clone
+```
+- Copy the python files to the relevant applications
+```
+cp *.py ../asset/pkg_classes
+cp *.py ../clock/pkg_classes
+cp *.py ../server/pkg_classes
+cp *.py ../switch/pkg_classes
+cp *.py ../siren/pkg_classes
+```
 
 ## Usage
 How does one go about using it?
@@ -86,9 +98,11 @@ from pkg_classes.whoview import WhoView
 ```
 # get the command line arguements
 CONFIG = ConfigModel(LOGGING_FILE)
+
 # setup web server updates
 DJANGO = DjangoModel(LOGGING_FILE)
 DJANGO.set_django_urls(CONFIG.get_django_api_url())
+
 # Set up who message handler from MQTT broker and wait for client.
 WHO = WhoView(LOGGING_FILE, DJANGO)
 ```
@@ -108,6 +122,7 @@ TOPIC_DISPATCH_DICTIONARY = {
     "diy/system/who":
         {"method": system_message}
 }
+
 def system_message(client, msg):
     """ Log and process system messages. """
     # pylint: disable=unused-argument
