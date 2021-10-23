@@ -59,7 +59,8 @@ What are the project requirements/dependencies? Where are they listed? A require
 
 Proceed to describe how to install / setup one's local environment / get started with the project.
 ```
-git clone
+git clone https://github.com/parttimehacker/whoview.git
+cd whoview
 ```
 - Copy the python files to the relevant applications
 ```
